@@ -1,0 +1,20 @@
+{
+  "buttons": {
+    "cancel": "Cancel",
+    "change": "Change",
+    "noCancel": "No, cancel",
+    "yesContinue": "Yes, continue",
+    "send": "Send",
+    "ok": "Ok",
+    "import": "Import",
+    "copy": "Copy",
+    "edit": "Edit",
+    "hide": "Hide",
+    "show": "Show",
+    "save": "Save",
+    "next": "Next",
+    "confirm": "Confirm",
+    "close": "Close",
+    "done": "Done"
+  }
+}
