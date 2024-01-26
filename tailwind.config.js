@@ -1,15 +1,17 @@
-const palette = require("./palette.js");
+const palette = require('./palette.js');
 
 module.exports = {
-  content: [
-    "./source/components/**/*.{html,js,jsx,ts,tsx}",
-    "./source/pages/**/*.{html,js,jsx,ts,tsx}",
-    "./views/*.html",
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   media: false, //darkMode is outdated
   theme: {
     extend: {
       colors: palette,
+    },
+    fontFamily: {
+      sans: ['Helvetica', 'Arial', 'sans-serif'],
+    },
+    backgroundImage: {
+      moon: 'radial-gradient(ellipse at bottom, #DDE6ED 0%, #526D82 100%)',
     },
   },
   variants: {
