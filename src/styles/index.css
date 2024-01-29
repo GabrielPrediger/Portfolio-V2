@@ -4,11 +4,36 @@
 
 html {
   height: 100%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #010108;
+}
+
+h3 {
+  font-family: Montserrat, sans-serif;
+}
+
+.block {
+  position: relative;
+  animation: pulsar 15s infinite; /* Adicionando a animação pulsar */
+}
+
+@keyframes pulsar {
+  0% {
+    box-shadow: 0 0 390px #37306b; /* Sombra vermelha */
+  }
+  50% {
+    box-shadow: 0 0 490px #66347f, 0 0 490px #9e4784; /* Sombra vermelha mais intensa */
+  }
+  100% {
+    box-shadow: 0 0 390px #37306b; /* Retornando à sombra inicial */
+  }
+}
+
+.block:after {
+  filter: blur(150px);
 }

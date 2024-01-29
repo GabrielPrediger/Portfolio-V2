@@ -11,7 +11,10 @@ module.exports = {
       sans: ['Helvetica', 'Arial', 'sans-serif'],
     },
     backgroundImage: {
-      moon: 'radial-gradient(ellipse at bottom, #DDE6ED 0%, #526D82 100%)',
+      all: 'linear-gradient(0deg,hsl(247deg 38% 30%) 0%,hsl(250deg 33% 16%) 47%,hsl(0deg 0% 0%) 100%)',
+      mid: 'radial-gradient(at center, #37306B, #66347F)',
+      complement:
+        'linear-gradient(0deg,hsl(280deg 42% 35%) 0%,hsl(281deg 35% 18%) 47%,hsl(0deg 0% 0%) 100%)',
     },
   },
   variants: {

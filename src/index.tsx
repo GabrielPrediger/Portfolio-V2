@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import './styles/stars.css';
-import './styles/hole.scss';
+import './styles/meteor.scss';
 
 import App from './App';
 
