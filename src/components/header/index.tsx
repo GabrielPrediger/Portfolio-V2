@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
       {headerLinks.map((data: HeaderLinks) => (
         <div
           key={data?.id}
-          className={`${data.id === 3 && 'pulsating-arrow'} cursor-pointer hover:opacity-70`}
+          className={`${data.id === 3 && 'pulsating-arrow'} cursor-pointer text-sm hover:opacity-70`}
         >
           {data?.content}
         </div>

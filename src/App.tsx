@@ -1,11 +1,11 @@
-import { Header } from 'components/header'
+import { Header } from 'components'
 import React from 'react'
 
 function App(): JSX.Element {
   return (
     <div className="h-full w-screen max-w-full">
       <div className="absolute top-0 z-0 h-full w-full">
-        <img src={require('assets/images/bg4.png')} alt="Bg" />
+        <img src={require('assets/images/bg3.png')} alt="Bg" />
       </div>
       <div className="relative z-[999] flex flex-col px-44">
         <Header />

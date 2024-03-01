@@ -3,11 +3,11 @@ import { MdKeyboardDoubleArrowDown } from 'react-icons/md'
 export const headerLinks = [
   {
     id: 0,
-    content: 'Home',
+    content: 'HOME',
   },
   {
     id: 1,
-    content: 'About me',
+    content: 'ABOUT',
   },
   {
     id: 3,
@@ -15,10 +15,10 @@ export const headerLinks = [
   },
   {
     id: 4,
-    content: 'Projects',
+    content: 'PROJECTS',
   },
   {
     id: 5,
-    content: 'Contact',
+    content: 'CONTACT',
   },
 ]
