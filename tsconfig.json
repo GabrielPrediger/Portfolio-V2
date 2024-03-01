@@ -16,13 +16,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./src",
-    "paths": {
-      "assets/*": ["src/assets/*"],
-      "components/*": ["src/components/*"],
-      "styles/*": ["src/styles/*"],
-      "containers/*": ["src/containers/*"]
-    }
-  },
+    "typeRoots" : ["node_modules/@types", "src/types"]
 
-  "include": ["src"]
+  },
+  "include": ["src", "./src/index.d.ts"]
 }

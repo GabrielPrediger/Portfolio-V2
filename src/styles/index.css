@@ -37,3 +37,22 @@ h3 {
 .block:after {
   filter: blur(150px);
 }
+
+@keyframes pulse {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px); /* Ajuste a altura da pulsação aqui */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.pulsating-arrow {
+  animation: pulse 2s infinite; /* Ajuste a duração da pulsação aqui */
+}
+
+
+
