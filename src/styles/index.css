@@ -76,21 +76,17 @@ h3 {
 
 @keyframes changeWidthAndColor {
   0% {
-    width: 0%;
-    background-color: rgba(121,223,255,1); /* Cor inicial - vermelho */
+    background-color: rgb(2 6 23); /* Cor inicial - vermelho */
   }
   50% {
-    width: 50%;
-    background-color: rgba(227,185,76,1); /* Cor intermediária - verde */
+    background-color: rgb(71 85 105); /* Cor intermediária - verde */
   }
   100% {
-    width: 100%;
-    background-color: rgba(252,69,69,1); /* Cor final - verde */
+    background-color: #fff; /* Cor final - verde */
   }
 }
 
 .your-element {
-  height: 0.5rem; /* Ajuste a altura conforme necessário */
   animation: changeWidthAndColor 7s linear forwards; /* Ajuste a duração conforme necessário */
   transition: background-color 0.5s ease; /* Transição suave de cor */
 }
