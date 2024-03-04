@@ -55,4 +55,49 @@ h3 {
 }
 
 
+.fade-in-image {
+  animation: fadeIn 5s ease /* fadeIn e pulse combinadas */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9); /* Reduz o tamanho inicial para evitar problemas de rolagem */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* Mantém o tamanho normal */
+  }
+}
+
+
+
+
+
+@keyframes changeWidthAndColor {
+  0% {
+    width: 0%;
+    background-color: rgba(121,223,255,1); /* Cor inicial - vermelho */
+  }
+  50% {
+    width: 50%;
+    background-color: rgba(227,185,76,1); /* Cor intermediária - verde */
+  }
+  100% {
+    width: 100%;
+    background-color: rgba(252,69,69,1); /* Cor final - verde */
+  }
+}
+
+.your-element {
+  height: 0.5rem; /* Ajuste a altura conforme necessário */
+  animation: changeWidthAndColor 7s linear forwards; /* Ajuste a duração conforme necessário */
+  transition: background-color 0.5s ease; /* Transição suave de cor */
+}
+
+
+
+
+
+
 

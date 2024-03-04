@@ -1,14 +1,53 @@
 import { Header } from 'components'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { RiLinkedinLine } from 'react-icons/ri'
 import { MdOutlineMailOutline } from 'react-icons/md'
 import { FaGithub, FaWhatsapp } from 'react-icons/fa'
+import { useInView } from 'react-intersection-observer'
 
 function App(): JSX.Element {
+  const [playing, setPlaying] = useState(false)
+  const [ref, inView] = useInView({ triggerOnce: true })
+  const [progress, setProgress] = useState<number>(0)
+
+  useEffect(() => {
+    if (inView) {
+      setPlaying(true)
+    }
+  }, [inView])
+
+  useEffect(() => {
+    let intervalId: NodeJS.Timer
+
+    if (playing) {
+      intervalId = setInterval(() => {
+        setProgress((prevProgress) => {
+          const newProgress = prevProgress + 1
+          if (newProgress >= 100 || newProgress < 0) {
+            clearInterval(intervalId)
+            setPlaying(false)
+            return newProgress >= 100 ? 100 : 0
+          }
+          return newProgress
+        })
+      }, 70)
+    }
+
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId)
+      }
+    }
+  }, [playing, progress])
+
   return (
     <div className="h-full w-screen max-w-full">
-      <div className="absolute top-0 z-0 h-full w-full">
-        <img src={require('assets/images/bg8.png')} alt="Bg" />
+      <div className=" absolute top-0 z-0 h-full w-full overflow-y-hidden">
+        <img
+          src={require('assets/images/bg8.png')}
+          alt="Bg"
+          className="fade-in-image"
+        />
       </div>
       <div className="relative z-[999] flex flex-col px-44">
         <Header />
@@ -20,8 +59,8 @@ function App(): JSX.Element {
             Hello World
           </h1>
         </div>
-        <div className="relative top-[60rem] flex flex-col">
-          <div className="relative z-[999] mb-[40rem] flex flex-col gap-36">
+        <div className="relative top-[60rem] z-[999] flex flex-col gap-96">
+          <div className="relative flex flex-col gap-36">
             <h1 className="text-4xl tracking-[0.5em] text-gray-100">
               ABOUT ME
             </h1>
@@ -70,6 +109,40 @@ function App(): JSX.Element {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-20">
+            <div className="flex flex-col gap-1">
+              <h1 className="text-4xl tracking-[0.5em] text-gray-100" ref={ref}>
+                MY SKILLS
+              </h1>
+              <p className="max-w-[45%] text-justify text-base text-gray-500">
+                Minha maior experiencia como desenvolvedor é o Front-end mas
+                tenho anos de experiencia em projetos pessoais e profissionais
+                com o Back-end também
+              </p>
+            </div>
+            <div className="flex gap-10">
+              <div className="flex flex-1 flex-col gap-4">
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-[80%] rounded-full bg-slate-800">
+                    <div
+                      className="h-full rounded-full bg-white transition-all"
+                      style={{
+                        width: `${progress}%`,
+                        transition: 'width 0.7s',
+                      }}
+                    />
+                  </div>
+                  <p className="text-base tracking-[0.5em] text-gray-100">
+                    NODE.JS
+                  </p>
+                </div>
+                <p className="text-gray-700">
+                  More deitals on my companies resume
+                </p>
+              </div>
+              <div className="flex flex-1 flex-col"> </div>
             </div>
           </div>
         </div>

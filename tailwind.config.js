@@ -1,8 +1,11 @@
-const palette = require('./palette.js');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const palette = require('./palette.js')
 
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  media: false, //darkMode is outdated
+  mode: 'jit',
+  purge: ['./src/**/*.{js,jsx,ts,tsx,vue}'],
+  media: false, // darkMode is outdated
   theme: {
     extend: {
       colors: palette,
@@ -21,4 +24,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-};
+}
